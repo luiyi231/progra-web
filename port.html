@@ -100,12 +100,56 @@
         nav a:hover {
             text-decoration: underline;
         }
+        .dark-mode {
+            background: #333;
+            color: white;
+        }
+        .dark-mode .container {
+            background: #444;
+            box-shadow: 0px 0px 10px black;
+        }
+        .dark-mode nav, .dark-mode footer {
+            background: #111;
+        }
+        .dark-mode a {
+            color: #ddd;
+        }
+        .dark-mode .section {
+            background: #555;
+            color: white;
+        }
+        .dark-mode .profile-info h2 {
+            color: #ddd;
+        }
+        .dark-mode .icon {
+            color: #ddd;
+        }
+        .dark-mode ul li {
+            border-bottom: 1px solid #777;
+        }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #002147;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .dark-mode-toggle:hover {
+            background: #001122;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Perfil del Docente</h1>
     </header>
+
+    <!-- Botón para cambiar a modo oscuro -->
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">Modo Oscuro</button>
 
     <!-- Menú de navegación -->
     <nav>
@@ -283,5 +327,19 @@
     <footer>
         <p>&copy; 2025 Santos Carlos Huayta Paucar. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+
+            const button = document.querySelector('.dark-mode-toggle');
+            if (body.classList.contains('dark-mode')) {
+                button.textContent = 'Modo Claro';
+            } else {
+                button.textContent = 'Modo Oscuro';
+            }
+        }
+    </script>
 </body>
 </html>
